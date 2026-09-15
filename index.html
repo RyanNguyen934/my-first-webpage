@@ -3,12 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Academy Applications</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to My Project</h1>
-    <p>This page was built in VS Code and published to GitHub!</p>
-    <button id="magicBtn">Click Me!</button>
+
+    <h1>Academy Options</h1>
+
+    <div class="academy-container">
+        <button class="academy-btn airforce-btn" id="airforceBtn">
+            <img class="airforce-logo" src="air-force-logo.png" alt="U.S. Air Force emblem">
+            <span class="airforce-label">U.S. AIR FORCE</span>
+        </button>
+        <button class="academy-btn army-btn" id="armyBtn">
+            <img class="army-logo" src="us-army-logo-png.jpg" alt="U.S. Army emblem">
+            <span class="army-label">ARMY</span>
+        </button>
+        <button class="academy-btn" id="coastguardBtn">Coast Guard Academy</button>
+        <button class="academy-btn" id="mmaBtn">Merchant Marine Academy</button>
+        <button class="academy-btn navy-btn" id="navyBtn">
+            <img class="navy-logo" src="navy-logo.png" alt="U.S. Navy emblem">
+            <span class="navy-label">NAVY</span>
+        </button>
+    </div>
+
+    <script>
+        document.getElementById("airforceBtn").onclick = () => {
+            window.location.href = "air-force.html";
+        };
+
+        document.getElementById("armyBtn").onclick = () => {
+            window.location.href = "army.html";
+        };
+
+        document.getElementById("coastguardBtn").onclick = () => {
+            window.location.href = "coast-guard.html";
+        };
+
+        document.getElementById("mmaBtn").onclick = () => {
+            window.location.href = "merchant-marine.html";
+        };
+
+        document.getElementById("navyBtn").onclick = () => {
+            window.location.href = "naval.html";
+        };
+    </script>
+
 </body>
 </html>
