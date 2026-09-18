@@ -31,10 +31,44 @@
     </main>
 
     <script>
+        const airForcePages = {
+            'Basic Eligibility': 'air-force-basic-eligibility.html',
+            'SAT/ACT': 'air-force-sat-act.html',
+            'Pre-Candidate Questionnaire': 'air-force-pre-candidate-questionnaire.html',
+            'Nominations': 'air-force-nominations.html',
+            'Candidate Fitness Assessment (CFA)': 'air-force-candidate-fitness-assessment.html',
+            'Admissions File/Application': 'air-force-admissions-file-application.html',
+            'Medical Exams': 'air-force-medical-exams.html',
+            'Interview': 'air-force-interview.html',
+            'Final Deadline': 'air-force-final-deadline.html'
+        };
+
+        const airForceButtonKeys = {
+            'Basic Eligibility': 'air-force-basic-eligibility',
+            'SAT/ACT': 'air-force-sat-act',
+            'Pre-Candidate Questionnaire': 'air-force-pre-candidate-questionnaire',
+            'Nominations': 'air-force-nominations',
+            'Candidate Fitness Assessment (CFA)': 'air-force-candidate-fitness-assessment',
+            'Admissions File/Application': 'air-force-admissions-file-application',
+            'Medical Exams': 'air-force-medical-exams',
+            'Interview': 'air-force-interview',
+            'Final Deadline': 'air-force-final-deadline'
+        };
+
         document.querySelectorAll('.option-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                alert(`Option ${button.textContent} selected`);
-            });
+            const label = button.textContent.trim();
+            const key = airForceButtonKeys[label];
+            const page = airForcePages[label];
+
+            if (key && localStorage.getItem(key) === 'true') {
+                button.classList.add('completed');
+            }
+
+            if (page) {
+                button.addEventListener('click', () => {
+                    window.location.href = page;
+                });
+            }
         });
     </script>
 </body>

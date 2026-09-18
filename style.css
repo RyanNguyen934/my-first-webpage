@@ -292,10 +292,42 @@ button {
   background-color: #dfe9ff;
 }
 
+.option-btn.completed {
+  background-color: #32c76d;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(50, 199, 109, 0.45);
+}
+
 .back-link {
-  display: inline-block;
-  margin-top: 20px;
+  display: block;
+  margin-top: 12px;
   text-decoration: none;
   color: #8ec5ff;
   font-weight: bold;
+  text-align: center;
+}
+
+.air-force-check-btn {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  height: 46px;
+  padding: 0 18px;
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0b1f3a;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 18px auto 0;
+  transition: all 0.2s ease;
+}
+
+.air-force-check-btn.checked {
+  background: #32c76d;
+  border-color: #32c76d;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(50, 199, 109, 0.45);
 }

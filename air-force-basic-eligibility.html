@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Force - Basic Eligibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body page-air-force">
+    <main class="page-card air-force-card">
+        <div class="air-force-header">
+            <img src="air-force-logo.png" alt="U.S. Air Force emblem">
+        </div>
+        <h1 class="air-force-title">Basic Eligibility</h1>
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px;">Applicants must be a U.S. citizen, meet age and academic standards, and complete the required preparatory steps for the Air Force Academy application process.</p>
+        <ul style="padding-left: 24px; margin: 16px 0 24px; line-height: 2.1; font-size: 1.08rem;">
+            <li><strong>Age:</strong> Be at least 17 years old and not past your 23rd birthday on July 1 of the year you enter the Academy.</li>
+            <li><strong>Citizenship:</strong> Be a United States citizen.</li>
+            <li><strong>Status:</strong> Be unmarried with no dependents.</li>
+            <li><strong>Character:</strong> Be of good moral character.</li>
+        </ul>
+        <button class="air-force-check-btn" type="button" data-key="air-force-basic-eligibility" aria-label="Mark Basic Eligibility complete">✓ Completed</button>
+        <a class="back-link" href="air-force.html">Back to Air Force list</a>
+    </main>
+    <script>
+        const checkButton = document.querySelector('.air-force-check-btn');
+        if (checkButton) {
+            const key = checkButton.dataset.key;
+            if (localStorage.getItem(key) === 'true') {
+                checkButton.classList.add('checked');
+            }
+
+            checkButton.addEventListener('click', () => {
+                const isChecked = checkButton.classList.toggle('checked');
+                localStorage.setItem(key, String(isChecked));
+            });
+        }
+    </script>
+</body>
+</html>

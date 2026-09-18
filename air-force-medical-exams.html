@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Force - Medical Exams</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body page-air-force">
+    <main class="page-card air-force-card">
+        <div class="air-force-header">
+            <img src="air-force-logo.png" alt="U.S. Air Force emblem">
+        </div>
+        <h1 class="air-force-title">Medical Exams</h1>
+        <p>Medical exams confirm that candidates meet the physical and health standards required for academy training and service.</p>
+        <button class="air-force-check-btn" type="button" data-key="air-force-medical-exams" aria-label="Mark medical exams complete">✓ Completed</button>
+        <a class="back-link" href="air-force.html">Back to Air Force list</a>
+    </main>
+    <script>
+        const checkButton = document.querySelector('.air-force-check-btn');
+        if (checkButton) {
+            const key = checkButton.dataset.key;
+            if (localStorage.getItem(key) === 'true') {
+                checkButton.classList.add('checked');
+            }
+
+            checkButton.addEventListener('click', () => {
+                const isChecked = checkButton.classList.toggle('checked');
+                localStorage.setItem(key, String(isChecked));
+            });
+        }
+    </script>
+</body>
+</html>
