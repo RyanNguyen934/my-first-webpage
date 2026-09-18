@@ -159,6 +159,56 @@ button {
   text-transform: uppercase;
 }
 
+.coastguard-btn {
+  background-color: #ffffff;
+  color: #0b1f3a;
+  width: 420px;
+  height: 120px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 16px;
+}
+
+.coastguard-logo {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.coastguard-label {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.merchant-btn {
+  background-color: #ffffff;
+  color: #0b1f3a;
+  width: 420px;
+  height: 120px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 16px;
+}
+
+.merchant-logo {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.merchant-label {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 .navy-btn {
   background-color: #ffffff;
   color: #0b1f3a;
@@ -212,6 +262,34 @@ button {
   font-size: 36px;
   margin: 0 0 12px;
   text-transform: uppercase;
+}
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 18px;
+}
+
+.option-btn {
+  background-color: #ffffff;
+  color: #0b1f3a;
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  min-height: 54px;
+  padding: 10px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.option-btn:hover {
+  background-color: #dfe9ff;
 }
 
 .back-link {

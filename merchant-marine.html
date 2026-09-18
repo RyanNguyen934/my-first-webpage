@@ -10,7 +10,24 @@
     <main class="page-card">
         <h1>Merchant Marine Academy</h1>
         <p>Welcome to the Merchant Marine Academy page.</p>
+
+        <div class="option-list">
+            <button class="option-btn" type="button">1</button>
+            <button class="option-btn" type="button">2</button>
+            <button class="option-btn" type="button">3</button>
+            <button class="option-btn" type="button">4</button>
+            <button class="option-btn" type="button">5</button>
+        </div>
+
         <a class="back-link" href="index.html">Back to Academy Options</a>
     </main>
+
+    <script>
+        document.querySelectorAll('.option-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                alert(`Option ${button.textContent} selected`);
+            });
+        });
+    </script>
 </body>
 </html>

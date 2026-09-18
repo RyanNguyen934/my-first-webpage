@@ -14,7 +14,28 @@
 
         <h1 class="air-force-title">U.S. AIR FORCE</h1>
         <p>Welcome to the Air Force Academy page.</p>
+
+        <div class="option-list">
+            <button class="option-btn" type="button">Basic Eligibility</button>
+            <button class="option-btn" type="button">SAT/ACT</button>
+            <button class="option-btn" type="button">Pre-Candidate Questionnaire</button>
+            <button class="option-btn" type="button">Nominations</button>
+            <button class="option-btn" type="button">Candidate Fitness Assessment (CFA)</button>
+            <button class="option-btn" type="button">Admissions File/Application</button>
+            <button class="option-btn" type="button">Medical Exams</button>
+            <button class="option-btn" type="button">Interview</button>
+            <button class="option-btn" type="button">Final Deadline</button>
+        </div>
+
         <a class="back-link" href="index.html">Back to Academy Options</a>
     </main>
+
+    <script>
+        document.querySelectorAll('.option-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                alert(`Option ${button.textContent} selected`);
+            });
+        });
+    </script>
 </body>
 </html>
