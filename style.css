@@ -5,6 +5,22 @@ body {
   padding-top: 50px;
 }
 
+h1 {
+  margin-bottom: 8px;
+}
+
+.top-note {
+  margin: 0 0 18px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d1d1d;
+}
+
+.no-nomination-note {
+  margin-top: 8px;
+  margin-bottom: 26px;
+}
+
 button {
   padding: 10px 20px;
   font-size: 16px;
