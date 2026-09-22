@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Army - Basic Eligibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body page-army">
+    <main class="page-card army-card">
+        <div class="army-header">
+            <img src="us-army-logo-png.jpg" alt="U.S. Army emblem">
+        </div>
+        <h1 class="army-title">Basic Eligibility</h1>
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 22px;">Applicants must be a U.S. citizen, meet age and academic standards, and complete the required preparatory steps for the Army Academy application process.</p>
+        <ul style="padding-left: 24px; margin: 16px 0 24px; line-height: 2.1; font-size: 1.08rem;">
+            <li><strong>Age:</strong> Must be at least 17 and under 23 years old by July 1 of the year you enter.</li>
+            <li><strong>Citizenship:</strong> Must be a U.S. citizen (with rare international exceptions).</li>
+            <li><strong>Personal Status:</strong> Must be unmarried and have no legal obligation to support children.</li>
+        </ul>
+        <button class="air-force-check-btn" type="button" data-key="army-basic-eligibility" aria-label="Mark Basic Eligibility complete">✓ Completed</button>
+        <a class="back-link" href="army.html">Back to Army list</a>
+    </main>
+    <script>
+        const checkButton = document.querySelector('.air-force-check-btn');
+        if (checkButton) {
+            const key = checkButton.dataset.key;
+            if (localStorage.getItem(key) === 'true') {
+                checkButton.classList.add('checked');
+            }
+
+            checkButton.addEventListener('click', () => {
+                const isChecked = checkButton.classList.toggle('checked');
+                localStorage.setItem(key, String(isChecked));
+            });
+        }
+    </script>
+</body>
+</html>

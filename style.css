@@ -159,6 +159,36 @@ button {
   text-transform: uppercase;
 }
 
+.page-coast-guard {
+  background: #0b1f3a;
+  padding-top: 40px;
+}
+
+.coast-guard-card {
+  background: #0b1f3a;
+  color: #ffffff;
+  box-shadow: none;
+  padding: 20px 30px 30px;
+}
+
+.coast-guard-header {
+  width: 220px;
+  margin: 0 auto 10px;
+}
+
+.coast-guard-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.coast-guard-title {
+  color: #ffffff;
+  font-size: 36px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
 .coastguard-btn {
   background-color: #ffffff;
   color: #0b1f3a;
@@ -232,6 +262,36 @@ button {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 1px;
+}
+
+.page-merchant {
+  background: #0b1f3a;
+  padding-top: 40px;
+}
+
+.merchant-card {
+  background: #0b1f3a;
+  color: #ffffff;
+  box-shadow: none;
+  padding: 20px 30px 30px;
+}
+
+.merchant-header {
+  width: 220px;
+  margin: 0 auto 10px;
+}
+
+.merchant-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.merchant-title {
+  color: #ffffff;
+  font-size: 36px;
+  margin: 0 0 12px;
+  text-transform: uppercase;
 }
 
 .page-navy {

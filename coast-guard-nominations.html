@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coast Guard - Nominations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body page-coast-guard">
+    <main class="page-card coast-guard-card">
+        <div class="coast-guard-header">
+            <img src="coast-guard-logo.png" alt="U.S. Coast Guard emblem">
+        </div>
+        <h1 class="coast-guard-title">Nominations</h1>
+        <p>Nominations may be required or strongly recommended depending on the application path, and they can be a key part of the admissions process.</p>
+        <button class="air-force-check-btn" type="button" data-key="coast-guard-nominations" aria-label="Mark nominations complete">✓ Completed</button>
+        <a class="back-link" href="coast-guard.html">Back to Coast Guard list</a>
+    </main>
+    <script>
+        const checkButton = document.querySelector('.air-force-check-btn');
+        if (checkButton) {
+            const key = checkButton.dataset.key;
+            if (localStorage.getItem(key) === 'true') {
+                checkButton.classList.add('checked');
+            }
+
+            checkButton.addEventListener('click', () => {
+                const isChecked = checkButton.classList.toggle('checked');
+                localStorage.setItem(key, String(isChecked));
+            });
+        }
+    </script>
+</body>
+</html>

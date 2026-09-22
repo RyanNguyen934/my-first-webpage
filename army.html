@@ -16,11 +16,15 @@
         <p>Welcome to the Army Academy page.</p>
 
         <div class="option-list">
-            <button class="option-btn" type="button">1</button>
-            <button class="option-btn" type="button">2</button>
-            <button class="option-btn" type="button">3</button>
-            <button class="option-btn" type="button">4</button>
-            <button class="option-btn" type="button">5</button>
+            <button class="option-btn" type="button" data-page="army-basic-eligibility.html" data-key="army-basic-eligibility">Basic Eligibility</button>
+            <button class="option-btn" type="button" data-page="army-sat-act.html" data-key="army-sat-act">SAT/ACT</button>
+            <button class="option-btn" type="button" data-page="army-pre-candidate-questionnaire.html" data-key="army-pre-candidate-questionnaire">Pre-Candidate Questionnaire</button>
+            <button class="option-btn" type="button" data-page="army-nominations.html" data-key="army-nominations">Nominations</button>
+            <button class="option-btn" type="button" data-page="army-candidate-fitness-assessment.html" data-key="army-candidate-fitness-assessment">Candidate Fitness Assessment (CFA)</button>
+            <button class="option-btn" type="button" data-page="army-admissions-file-application.html" data-key="army-admissions-file-application">Admissions File/Application</button>
+            <button class="option-btn" type="button" data-page="army-medical-exams.html" data-key="army-medical-exams">Medical Exams</button>
+            <button class="option-btn" type="button" data-page="army-interview.html" data-key="army-interview">Interview</button>
+            <button class="option-btn" type="button" data-page="army-final-deadline.html" data-key="army-final-deadline">Final Deadline</button>
         </div>
 
         <a class="back-link" href="index.html">Back to Academy Options</a>
@@ -28,8 +32,21 @@
 
     <script>
         document.querySelectorAll('.option-btn').forEach((button) => {
+            const key = button.dataset.key;
+            if (key && localStorage.getItem(key) === 'true') {
+                button.classList.add('completed');
+            }
+
+            const page = button.dataset.page;
+            if (page) {
+                button.addEventListener('click', () => {
+                    window.location.href = page;
+                });
+                return;
+            }
+
             button.addEventListener('click', () => {
-                alert(`Option ${button.textContent} selected`);
+                alert(`You clicked button ${button.dataset.choice}`);
             });
         });
     </script>

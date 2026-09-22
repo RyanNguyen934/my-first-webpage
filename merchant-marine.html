@@ -6,17 +6,25 @@
     <title>Merchant Marine Academy</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-body">
-    <main class="page-card">
-        <h1>Merchant Marine Academy</h1>
+<body class="page-body page-merchant">
+    <main class="page-card merchant-card">
+        <div class="merchant-header">
+            <img src="https://www.usmma.edu/themes/custom/usmma/images/logo.svg" alt="United States Merchant Marine Academy wordmark logo">
+        </div>
+
+        <h1 class="merchant-title">U.S. MERCHANT MARINE</h1>
         <p>Welcome to the Merchant Marine Academy page.</p>
 
         <div class="option-list">
-            <button class="option-btn" type="button">1</button>
-            <button class="option-btn" type="button">2</button>
-            <button class="option-btn" type="button">3</button>
-            <button class="option-btn" type="button">4</button>
-            <button class="option-btn" type="button">5</button>
+            <button class="option-btn" type="button" data-page="merchant-basic-eligibility.html" data-key="merchant-basic-eligibility">Basic Eligibility</button>
+            <button class="option-btn" type="button" data-page="merchant-sat-act.html" data-key="merchant-sat-act">SAT/ACT</button>
+            <button class="option-btn" type="button" data-page="merchant-pre-candidate-questionnaire.html" data-key="merchant-pre-candidate-questionnaire">Pre-Candidate Questionnaire</button>
+            <button class="option-btn" type="button" data-page="merchant-nominations.html" data-key="merchant-nominations">Nominations</button>
+            <button class="option-btn" type="button" data-page="merchant-candidate-fitness-assessment.html" data-key="merchant-candidate-fitness-assessment">Candidate Fitness Assessment (CFA)</button>
+            <button class="option-btn" type="button" data-page="merchant-admissions-file-application.html" data-key="merchant-admissions-file-application">Admissions File/Application</button>
+            <button class="option-btn" type="button" data-page="merchant-medical-exams.html" data-key="merchant-medical-exams">Medical Exams</button>
+            <button class="option-btn" type="button" data-page="merchant-interview.html" data-key="merchant-interview">Interview</button>
+            <button class="option-btn" type="button" data-page="merchant-final-deadline.html" data-key="merchant-final-deadline">Final Deadline</button>
         </div>
 
         <a class="back-link" href="index.html">Back to Academy Options</a>
@@ -24,9 +32,17 @@
 
     <script>
         document.querySelectorAll('.option-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                alert(`Option ${button.textContent} selected`);
-            });
+            const key = button.dataset.key;
+            if (key && localStorage.getItem(key) === 'true') {
+                button.classList.add('completed');
+            }
+
+            const page = button.dataset.page;
+            if (page) {
+                button.addEventListener('click', () => {
+                    window.location.href = page;
+                });
+            }
         });
     </script>
 </body>

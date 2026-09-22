@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navy - Interview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body page-navy">
+    <main class="page-card navy-card">
+        <div class="navy-header">
+            <img src="navy-logo.png" alt="U.S. Navy emblem">
+        </div>
+        <h1 class="navy-title">Interview</h1>
+        <p>The interview helps assess leadership potential, motivation, communication, and overall readiness for Academy life.</p>
+        <button class="air-force-check-btn" type="button" data-key="navy-interview" aria-label="Mark interview complete">✓ Completed</button>
+        <a class="back-link" href="naval.html">Back to Navy list</a>
+    </main>
+    <script>
+        const checkButton = document.querySelector('.air-force-check-btn');
+        if (checkButton) {
+            const key = checkButton.dataset.key;
+            if (localStorage.getItem(key) === 'true') {
+                checkButton.classList.add('checked');
+            }
+
+            checkButton.addEventListener('click', () => {
+                const isChecked = checkButton.classList.toggle('checked');
+                localStorage.setItem(key, String(isChecked));
+            });
+        }
+    </script>
+</body>
+</html>

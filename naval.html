@@ -16,11 +16,15 @@
         <p>Welcome to the Naval Academy page.</p>
 
         <div class="option-list">
-            <button class="option-btn" type="button">1</button>
-            <button class="option-btn" type="button">2</button>
-            <button class="option-btn" type="button">3</button>
-            <button class="option-btn" type="button">4</button>
-            <button class="option-btn" type="button">5</button>
+            <button class="option-btn" type="button" data-page="navy-basic-eligibility.html" data-key="navy-basic-eligibility">Basic Eligibility</button>
+            <button class="option-btn" type="button" data-page="navy-sat-act.html" data-key="navy-sat-act">SAT/ACT</button>
+            <button class="option-btn" type="button" data-page="navy-pre-candidate-questionnaire.html" data-key="navy-pre-candidate-questionnaire">Pre-Candidate Questionnaire</button>
+            <button class="option-btn" type="button" data-page="navy-nominations.html" data-key="navy-nominations">Nominations</button>
+            <button class="option-btn" type="button" data-page="navy-candidate-fitness-assessment.html" data-key="navy-candidate-fitness-assessment">Candidate Fitness Assessment (CFA)</button>
+            <button class="option-btn" type="button" data-page="navy-admissions-file-application.html" data-key="navy-admissions-file-application">Admissions File/Application</button>
+            <button class="option-btn" type="button" data-page="navy-medical-exams.html" data-key="navy-medical-exams">Medical Exams</button>
+            <button class="option-btn" type="button" data-page="navy-interview.html" data-key="navy-interview">Interview</button>
+            <button class="option-btn" type="button" data-page="navy-final-deadline.html" data-key="navy-final-deadline">Final Deadline</button>
         </div>
 
         <a class="back-link" href="index.html">Back to Academy Options</a>
@@ -28,9 +32,17 @@
 
     <script>
         document.querySelectorAll('.option-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                alert(`Option ${button.textContent} selected`);
-            });
+            const key = button.dataset.key;
+            if (key && localStorage.getItem(key) === 'true') {
+                button.classList.add('completed');
+            }
+
+            const page = button.dataset.page;
+            if (page) {
+                button.addEventListener('click', () => {
+                    window.location.href = page;
+                });
+            }
         });
     </script>
 </body>

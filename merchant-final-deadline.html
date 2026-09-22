@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Marine - Final Deadline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body page-merchant">
+    <main class="page-card merchant-card">
+        <div class="merchant-header">
+            <img src="https://www.usmma.edu/themes/custom/usmma/images/logo.svg" alt="United States Merchant Marine Academy wordmark logo">
+        </div>
+        <h1 class="merchant-title">Final Deadline</h1>
+        <p>Meeting the final deadline is critical. Be sure all required documents, applications, and supporting materials are complete and submitted on time.</p>
+        <button class="air-force-check-btn" type="button" data-key="merchant-final-deadline" aria-label="Mark final deadline complete">✓ Completed</button>
+        <a class="back-link" href="merchant-marine.html">Back to Merchant Marine list</a>
+    </main>
+    <script>
+        const checkButton = document.querySelector('.air-force-check-btn');
+        if (checkButton) {
+            const key = checkButton.dataset.key;
+            if (localStorage.getItem(key) === 'true') {
+                checkButton.classList.add('checked');
+            }
+
+            checkButton.addEventListener('click', () => {
+                const isChecked = checkButton.classList.toggle('checked');
+                localStorage.setItem(key, String(isChecked));
+            });
+        }
+    </script>
+</body>
+</html>

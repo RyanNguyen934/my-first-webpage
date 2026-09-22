@@ -6,17 +6,25 @@
     <title>Coast Guard Academy</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-body">
-    <main class="page-card">
-        <h1>Coast Guard Academy</h1>
+<body class="page-body page-coast-guard">
+    <main class="page-card coast-guard-card">
+        <div class="coast-guard-header">
+            <img src="coast-guard-logo.png" alt="U.S. Coast Guard emblem">
+        </div>
+
+        <h1 class="coast-guard-title">U.S. COAST GUARD</h1>
         <p>Welcome to the Coast Guard Academy page.</p>
 
         <div class="option-list">
-            <button class="option-btn" type="button">1</button>
-            <button class="option-btn" type="button">2</button>
-            <button class="option-btn" type="button">3</button>
-            <button class="option-btn" type="button">4</button>
-            <button class="option-btn" type="button">5</button>
+            <button class="option-btn" type="button" data-page="coast-guard-basic-eligibility.html" data-key="coast-guard-basic-eligibility">Basic Eligibility</button>
+            <button class="option-btn" type="button" data-page="coast-guard-sat-act.html" data-key="coast-guard-sat-act">SAT/ACT</button>
+            <button class="option-btn" type="button" data-page="coast-guard-pre-candidate-questionnaire.html" data-key="coast-guard-pre-candidate-questionnaire">Pre-Candidate Questionnaire</button>
+            <button class="option-btn" type="button" data-page="coast-guard-nominations.html" data-key="coast-guard-nominations">Nominations</button>
+            <button class="option-btn" type="button" data-page="coast-guard-candidate-fitness-assessment.html" data-key="coast-guard-candidate-fitness-assessment">Candidate Fitness Assessment (CFA)</button>
+            <button class="option-btn" type="button" data-page="coast-guard-admissions-file-application.html" data-key="coast-guard-admissions-file-application">Admissions File/Application</button>
+            <button class="option-btn" type="button" data-page="coast-guard-medical-exams.html" data-key="coast-guard-medical-exams">Medical Exams</button>
+            <button class="option-btn" type="button" data-page="coast-guard-interview.html" data-key="coast-guard-interview">Interview</button>
+            <button class="option-btn" type="button" data-page="coast-guard-final-deadline.html" data-key="coast-guard-final-deadline">Final Deadline</button>
         </div>
 
         <a class="back-link" href="index.html">Back to Academy Options</a>
@@ -24,9 +32,17 @@
 
     <script>
         document.querySelectorAll('.option-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                alert(`Option ${button.textContent} selected`);
-            });
+            const key = button.dataset.key;
+            if (key && localStorage.getItem(key) === 'true') {
+                button.classList.add('completed');
+            }
+
+            const page = button.dataset.page;
+            if (page) {
+                button.addEventListener('click', () => {
+                    window.location.href = page;
+                });
+            }
         });
     </script>
 </body>

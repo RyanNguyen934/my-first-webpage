@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Army - SAT/ACT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-body page-army">
+    <main class="page-card army-card">
+        <div class="army-header">
+            <img src="us-army-logo-png.jpg" alt="U.S. Army emblem">
+        </div>
+        <h1 class="army-title">SAT/ACT</h1>
+        <p>Strong scores on the SAT or ACT can strengthen an Army Academy application and help demonstrate academic readiness.</p>
+        <button class="air-force-check-btn" type="button" data-key="army-sat-act" aria-label="Mark SAT/ACT complete">✓ Completed</button>
+        <a class="back-link" href="army.html">Back to Army list</a>
+    </main>
+    <script>
+        const checkButton = document.querySelector('.air-force-check-btn');
+        if (checkButton) {
+            const key = checkButton.dataset.key;
+            if (localStorage.getItem(key) === 'true') {
+                checkButton.classList.add('checked');
+            }
+
+            checkButton.addEventListener('click', () => {
+                const isChecked = checkButton.classList.toggle('checked');
+                localStorage.setItem(key, String(isChecked));
+            });
+        }
+    </script>
+</body>
+</html>
