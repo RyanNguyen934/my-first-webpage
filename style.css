@@ -237,6 +237,56 @@ button {
   text-transform: uppercase;
 }
 
+.coast-guard-pfe-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.coast-guard-pfe-table th,
+.coast-guard-pfe-table td {
+  border: 1px solid #d9d9d9;
+  padding: 8px;
+  text-align: left;
+}
+
+.coast-guard-pfe-link {
+  color: #a8d5ff;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.coast-guard-pfe-link:hover {
+  color: #d7ebff;
+}
+
+.coast-guard-eligibility-list {
+  margin: 20px 0;
+  padding-left: 24px;
+}
+
+.coast-guard-eligibility-list li {
+  margin: 14px 0;
+  line-height: 1.5;
+}
+
+.coast-guard-sat-card > p {
+  margin: 20px 0;
+  line-height: 1.55;
+}
+
+.coast-guard-sat-card > ul {
+  margin: 20px 0;
+  padding-left: 24px;
+}
+
+.coast-guard-sat-card > ul li {
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
 .coastguard-btn {
   background-color: #ffffff;
   color: #0b1f3a;
