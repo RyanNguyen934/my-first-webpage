@@ -137,6 +137,16 @@ button {
   color: #d7ebff;
 }
 
+.air-force-login-link {
+  color: #a8d5ff;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.air-force-login-link:hover {
+  color: #d7ebff;
+}
+
 .page-air-force {
   background: #0b1f3a;
   padding-top: 40px;
