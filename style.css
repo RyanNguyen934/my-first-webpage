@@ -5,8 +5,33 @@ body {
   padding-top: 50px;
 }
 
-h1 {
+.home-title {
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  font-family: 'Russo One', 'Righteous', Arial, sans-serif;
+  font-size: 4rem;
+  line-height: 0.9;
+  letter-spacing: 1.8px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 rgba(4, 38, 91, 0.35);
+}
+
+.service-line {
+  color: #d71920;
+}
+
+.academy-line {
+  color: #ffffff;
+  -webkit-text-stroke: 4px #000000;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.central-line {
+  color: #0033a0;
 }
 
 .top-note {
