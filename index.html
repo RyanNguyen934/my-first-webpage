@@ -19,30 +19,95 @@
     <p class="top-note">Nomination Required</p>
 
     <div class="academy-container">
-        <button class="academy-btn airforce-btn" id="airforceBtn">
+        <button class="academy-btn airforce-btn" id="airforceBtn" data-academy="air-force">
             <img class="airforce-logo" src="air-force-logo.png" alt="U.S. Air Force emblem">
             <span class="airforce-label">U.S. AIR FORCE</span>
         </button>
-        <button class="academy-btn army-btn" id="armyBtn">
+        <button class="academy-btn army-btn" id="armyBtn" data-academy="army">
             <img class="army-logo" src="us-army-logo-png.jpg" alt="U.S. Army emblem">
             <span class="army-label">U.S. ARMY</span>
         </button>
-        <button class="academy-btn navy-btn" id="navyBtn">
+        <button class="academy-btn navy-btn" id="navyBtn" data-academy="navy">
             <img class="navy-logo" src="navy-logo.png" alt="U.S. Navy emblem">
             <span class="navy-label">U.S. NAVY</span>
         </button>
-        <button class="academy-btn merchant-btn" id="mmaBtn">
+        <button class="academy-btn merchant-btn" id="mmaBtn" data-academy="merchant">
             <img class="merchant-logo" src="https://www.usmma.edu/themes/custom/usmma/images/logo.svg" alt="United States Merchant Marine Academy wordmark logo">
             <span class="merchant-label">U.S. MERCHANT MARINE</span>
         </button>
         <p class="top-note no-nomination-note">No Nomination Required</p>
-        <button class="academy-btn coastguard-btn" id="coastguardBtn">
+        <button class="academy-btn coastguard-btn" id="coastguardBtn" data-academy="coast-guard">
             <img class="coastguard-logo" src="coast-guard-2-logo.png" alt="U.S. Coast Guard emblem">
             <span class="coastguard-label">U.S. COAST GUARD</span>
         </button>
     </div>
 
     <script>
+        const academyCompletionMap = {
+            'air-force': [
+                'air-force-basic-eligibility',
+                'air-force-sat-act',
+                'air-force-pre-candidate-questionnaire',
+                'air-force-nominations',
+                'air-force-candidate-fitness-assessment',
+                'air-force-admissions-file-application',
+                'air-force-medical-exams',
+                'air-force-interview',
+                'air-force-final-deadline'
+            ],
+            army: [
+                'army-basic-eligibility',
+                'army-sat-act',
+                'army-pre-candidate-questionnaire',
+                'army-nominations',
+                'army-candidate-fitness-assessment',
+                'army-admissions-file-application',
+                'army-medical-exams',
+                'army-interview',
+                'army-final-deadline'
+            ],
+            navy: [
+                'navy-basic-eligibility',
+                'navy-sat-act',
+                'navy-pre-candidate-questionnaire',
+                'navy-nominations',
+                'navy-candidate-fitness-assessment',
+                'navy-admissions-file-application',
+                'navy-medical-exams',
+                'navy-interview',
+                'navy-final-deadline'
+            ],
+            merchant: [
+                'merchant-basic-eligibility',
+                'merchant-sat-act',
+                'merchant-pre-candidate-questionnaire',
+                'merchant-nominations',
+                'merchant-candidate-fitness-assessment',
+                'merchant-admissions-file-application',
+                'merchant-medical-exams',
+                'merchant-interview',
+                'merchant-final-deadline'
+            ],
+            'coast-guard': [
+                'coast-guard-basic-eligibility',
+                'coast-guard-sat-act',
+                'coast-guard-candidate-fitness-assessment',
+                'coast-guard-admissions-file-application',
+                'coast-guard-medical-exams',
+                'coast-guard-interview',
+                'coast-guard-final-deadline'
+            ]
+        };
+
+        function updateAcademyCompletionState() {
+            document.querySelectorAll('.academy-btn').forEach((button) => {
+                const academy = button.dataset.academy;
+                const keys = academyCompletionMap[academy] || [];
+                const isComplete = keys.length > 0 && keys.every((key) => localStorage.getItem(key) === 'true');
+                button.classList.toggle('completed', isComplete);
+            });
+        }
+
         document.getElementById("airforceBtn").onclick = () => {
             window.location.href = "air-force.html";
         };
@@ -62,6 +127,8 @@
         document.getElementById("navyBtn").onclick = () => {
             window.location.href = "naval.html";
         };
+
+        updateAcademyCompletionState();
     </script>
 
 </body>

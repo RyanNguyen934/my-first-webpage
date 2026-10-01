@@ -76,6 +76,13 @@ button {
   background-color: #bfbfbf;
 }
 
+.academy-btn.completed {
+  background-color: #32c76d;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(50, 199, 109, 0.45);
+  border: 2px solid #25a85a;
+}
+
 .airforce-btn {
   background-color: #ffffff;
   color: #0b1f3a;
@@ -489,6 +496,17 @@ button {
   text-transform: uppercase;
 }
 
+.navy-card ul {
+  list-style: disc;
+  padding-left: 30px;
+  margin: 22px 0 28px;
+}
+
+.navy-card li {
+  margin: 16px 0;
+  line-height: 1.9;
+}
+
 .option-list {
   display: flex;
   flex-direction: column;
@@ -530,6 +548,15 @@ button {
   color: #8ec5ff;
   font-weight: bold;
   text-align: center;
+}
+
+.navy-card a {
+  color: #8ec5ff;
+  font-weight: bold;
+}
+
+.navy-card a:hover {
+  color: #d7ebff;
 }
 
 .air-force-check-btn {
