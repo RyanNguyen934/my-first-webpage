@@ -466,6 +466,37 @@ button {
   text-transform: uppercase;
 }
 
+.merchant-card h2 {
+  margin: 28px 0 14px;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.merchant-card p {
+  margin: 18px 0;
+  line-height: 1.8;
+}
+
+.merchant-card ul,
+.merchant-card ol {
+  margin: 20px 0 24px;
+  padding-left: 30px;
+}
+
+.merchant-card li {
+  margin: 12px 0;
+  line-height: 1.8;
+}
+
+.merchant-card a {
+  color: #8ec5ff;
+  font-weight: bold;
+}
+
+.merchant-card a:hover {
+  color: #d7ebff;
+}
+
 .page-navy {
   background: #0b1f3a;
   padding-top: 40px;
